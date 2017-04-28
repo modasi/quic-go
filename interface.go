@@ -63,6 +63,9 @@ type Config struct {
 	// If this field is not set, the Dial functions will return only when the connection is forward secure.
 	// Callbacks have to be thread-safe, since they might be called in separate goroutines.
 	ConnState ConnStateCallback
+	// The QUIC versions that can be negotiated.
+	// If not set, it uses all versions available.
+	Versions []protocol.VersionNumber
 }
 
 // A Listener for incoming QUIC connections
